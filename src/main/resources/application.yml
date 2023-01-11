@@ -1,0 +1,29 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: demo-courses
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+  datasource:
+    url: jdbc:postgresql://localhost:5432/coursesdbdev
+    username: postgres
+    password: postgres
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+---
+spring:
+  config:
+    activate:
+      on-profile: staging
+  datasource:
+    url: jdbc:postgresql://localhost:5432/coursesdbstaging
+    username: postgres
+    password: postgres
+
+
